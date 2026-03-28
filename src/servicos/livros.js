@@ -1,12 +1,13 @@
-import axios from 'axios';
-const livrosAPI = axios.create({baseURL: 'http://localhost:8000/livros'}); //cria uma instância do axios com a URL base para as requisições relacionadas aos livros
+import axios from "axios"
 
-async function getLivros() { //função para obter a lista de livros
-    const response = await livrosAPI.get("/"); //faz uma requisição GET para a URL base (http://localhost:8000/livros/) para obter a lista de livros
+const livrosAPI = axios.create({baseURL: "http://localhost:8000/livros"})
 
-    return response.data; //retorna os dados da resposta, que é a lista de livros
+async function getLivros() {
+    const response = await livrosAPI.get('/')
+
+    return response.data
 }
 
 export {
-    getLivros 
+    getLivros
 }
